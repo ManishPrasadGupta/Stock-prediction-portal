@@ -1,14 +1,14 @@
-import React from 'react'
+import React, { useState } from 'react'
 import axios from 'axios';
 
 const Register = () => {
 
-  const [username, setUsername] = React.useState('');
-  const [email, setEmail] = React.useState('');
-  const [password, setPassword] = React.useState('');
-  const [error, setError] = React.useState('');
-  const [success, setSuccess] = React.useState(false);
-  const [loading, setLoading] = React.useState(false);
+  const [username, setUsername] = useState('');
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  const [error, setError] = useState('');
+  const [success, setSuccess] = useState(false);
+  const [loading, setLoading] = useState(false);
 
   const handleRegistration = async (e) => {
     e.preventDefault();

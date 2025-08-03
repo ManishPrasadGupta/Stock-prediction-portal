@@ -5,13 +5,15 @@ import Home from './components/Home'
 import Header from './components/Header'
 import Footer from './components/Footer'
 import Login from './components/Login'
+import AuthProvider from './AuthProvider'
 
 
 function App() {
 
   return (
     <>
-      <BrowserRouter>
+      <AuthProvider>
+        <BrowserRouter>
         <Header />  
           <Routes>
             <Route path="/" element={<Home />} />
@@ -20,6 +22,7 @@ function App() {
           </Routes>
         <Footer />
       </BrowserRouter>
+      </AuthProvider>
     </>
   )
 }
