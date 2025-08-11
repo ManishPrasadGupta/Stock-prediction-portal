@@ -26,7 +26,10 @@ const Header = () => {
         <Link className="navbar-brand">Stock Prediction Portal</Link>
           <div>
             {isLoggedIn ? (
-              <button className="btn btn-danger" onClick={handleLogout}>Logout</button>
+             <>
+                <Button text="Dashboard" className="btn-outline-info" url="/Dashboard" />
+                <button className="btn btn-danger" onClick={handleLogout}>Logout</button>
+             </>
             ) : (
               <>
                 <Button text="Login" className="btn-outline-info" url="/login" />
@@ -41,4 +44,4 @@ const Header = () => {
   )
 }
 
-export default Header
+export default Header;

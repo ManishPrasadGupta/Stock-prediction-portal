@@ -27,7 +27,7 @@ const Login = () => {
         localStorage.setItem('refresh_token', response.data.refresh);
         console.log('Login successful');
         setIsLoggedIn(true);
-        navigate('/'); 
+        navigate('/dashboard'); 
       } catch (error) {
         console.error('invalid credential')    
         setError('Invalid username or password');  
@@ -42,7 +42,7 @@ const Login = () => {
       <div className="container">
         <div className="row justify-content-center">
             <div className='col-md-6 '>
-              <h3 className='text-light text-center'>Create your account</h3>
+              <h3 className='text-light text-center'>Login to your account</h3>
               <form onSubmit={handleLogin}>
                 <div className='mb-3'>
                   <input type="username" className='form-control' placeholder='Enter username' value={username} onChange={(e) => setUsername(e.target.value)}/>
