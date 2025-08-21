@@ -29,10 +29,10 @@ axiosInstance.interceptors.response.use(
   function (response) {
       return response;
   },
-// handle failed responses
   async function (error) {
     const originalRequest = error.config;
-    if(error.response.status === 401 && !originalRequest._retry) {
+
+    if (error.response && error.response.status === 401 && !originalRequest._retry) {
       originalRequest._retry = true;
       const refreshToken = localStorage.getItem('refresh_token');
       try {
@@ -46,7 +46,6 @@ axiosInstance.interceptors.response.use(
         localStorage.removeItem('access_token');
         localStorage.removeItem('refresh_token');
         window.location.href = '/login'; 
-      
       }
     }
     return Promise.reject(error);

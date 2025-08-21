@@ -24,7 +24,7 @@ function App() {
               <Route path="/login" element={<PublicRoute><Login /></PublicRoute>} />
               <Route path="/dashboard" element={<PrivateRoute><Dashboard /></PrivateRoute>} />
             </Routes>
-          <Footer />
+          {/* <Footer /> */}
         </BrowserRouter>
         </div>
       </AuthProvider>
